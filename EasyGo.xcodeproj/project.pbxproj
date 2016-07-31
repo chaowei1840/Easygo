@@ -193,6 +193,8 @@
 				TargetAttributes = {
 					44B72D9A1D4CE69800F77409 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = J9YK67RW33;
+						DevelopmentTeamName = "超 魏 (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 					44B72DAE1D4CE69900F77409 = {
@@ -408,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EasyGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chao.cc.EasyGo;
@@ -420,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EasyGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chao.cc.EasyGo;
@@ -497,6 +501,7 @@
 				44B72DC51D4CE69900F77409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44B72DC61D4CE69900F77409 /* Build configuration list for PBXNativeTarget "EasyGoTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +510,7 @@
 				44B72DC81D4CE69900F77409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44B72DC91D4CE69900F77409 /* Build configuration list for PBXNativeTarget "EasyGoUITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +519,7 @@
 				44B72DCB1D4CE69900F77409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
