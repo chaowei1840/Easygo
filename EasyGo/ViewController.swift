@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         desc.backgroundColor = UIColor.white()
         label.textAlignment = .center
-        // Do any additional setup after loading the view, typically from a nib.
+                // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,9 +42,12 @@ class ViewController: UIViewController {
                 action in
                 
                 let item = self.nextItem()
-                
-                
                 self.label.text = item.key
+                self.label.lineBreakMode = .byWordWrapping
+                self.label.numberOfLines = 0
+
+                
+                
                 self.desc.text = item.desc
                 self.answer.text = nil
             })
@@ -70,18 +73,66 @@ class ViewController: UIViewController {
         }
     }
     func nextItem() -> Item {
+        
+        
         let item = Item();
         item.desc = "123"
         item.key = "cc"
         item.score = 1
+        
+        let session = URLSession.shared
+        let myURL = URL(string: "http://192.168.1.108:8080/GradleProject/getNextItem")!
+        let task = session.dataTask(with: myURL) { (data, resonse, error) in
+            print(data)
+            print("111")
+            item.desc = String(data)
+            
+        }
+        task.resume()
+        
+        
+        
+        
+        
+        let url = URL(string: "http://192.168.1.108:8080/GradleProject/getNextItem")
+        let urlRequest = URLRequest(url: url!)
+        var response:URLResponse?
+        
+        do
+        {
+            let data = try NSURLConnection.sendSynchronousRequest(urlRequest, returning: &response)
+            let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+            print(str)
+            item.desc = String(str)
+            
+            let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+            let desc = json.object(forKey: "desc")
+            let key = json.object(forKey: "key")
+            let score = json.object(forKey: "score")
+            item.desc = String(desc!)
+            item.key = String(key!)
+            item.score = Int(score as! NSNumber)
+            
+        }
+        catch let error as NSError
+        {
+            print(error.code)
+            print(error.description)
+        }
+        
+        
         return item
     }
 }
 
 class Item
 {
-    var desc = ""
-    var key = ""
+    var desc:String = ""
+    var key:String = ""
     var score = 1
     
 }
+
+
+
+
