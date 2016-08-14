@@ -15,54 +15,52 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viO-mU-2v3">
-                                <frame key="frameInset" minX="139" minY="302" width="97" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="就这个了"/>
-                                <connections>
-                                    <action selector="submit:" destination="BYZ-38-t0r" eventType="touchDown" id="yG8-9j-yIs"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="行尸走肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6A-q7-tG3">
-                                <frame key="frameInset" minX="140" minY="160" width="100" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="猜出这个被遮住的词语" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIX-9u-1n0">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eri-su-fim">
-                                <frame key="frameInset" minX="109" minY="80" width="219" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">猜出这个遮住了一半的成语
-</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="马到成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jia-z0-OLG">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Onv-bb-llF">
-                                <frame key="frameInset" minX="143" minY="212" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPo-Ia-b0p">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="resetPlaceholder:" destination="BYZ-38-t0r" eventType="touchDown" id="3cB-0C-pke"/>
-                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnB-bK-Lpu">
+                                <state key="normal" title="就这个了"/>
+                                <connections>
+                                    <action selector="submit:" destination="BYZ-38-t0r" eventType="touchDown" id="2K6-ud-zUc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SPo-Ia-b0p" firstAttribute="top" secondItem="Jia-z0-OLG" secondAttribute="bottom" constant="51" id="02N-gJ-qR5"/>
+                            <constraint firstItem="pnB-bK-Lpu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0QY-ct-R7W"/>
+                            <constraint firstItem="Jia-z0-OLG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="892-Pc-WoW"/>
+                            <constraint firstItem="SPo-Ia-b0p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DMf-qe-ipx"/>
+                            <constraint firstItem="XIX-9u-1n0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZOy-oX-GYb"/>
+                            <constraint firstItem="Jia-z0-OLG" firstAttribute="top" secondItem="XIX-9u-1n0" secondAttribute="bottom" constant="44" id="cLJ-OT-QDr"/>
+                            <constraint firstItem="pnB-bK-Lpu" firstAttribute="top" secondItem="SPo-Ia-b0p" secondAttribute="bottom" constant="59" id="dFq-Qs-Rud"/>
+                            <constraint firstItem="XIX-9u-1n0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="iO1-4w-rwf"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="answer" destination="Onv-bb-llF" id="FYe-Jp-ZGH"/>
-                        <outlet property="desc" destination="eri-su-fim" id="XuH-Xs-WUO"/>
-                        <outlet property="label" destination="F6A-q7-tG3" id="MRt-R6-Cym"/>
+                        <outlet property="answer" destination="SPo-Ia-b0p" id="U9l-n0-5Qv"/>
+                        <outlet property="desc" destination="XIX-9u-1n0" id="mHv-EK-Aaj"/>
+                        <outlet property="label" destination="Jia-z0-OLG" id="LzQ-pu-hPq"/>
+                        <outlet property="submit" destination="pnB-bK-Lpu" id="zuL-pd-0Zb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="98.50074962518741"/>
+            <point key="canvasLocation" x="-80.625" y="98.239436619718305"/>
         </scene>
     </scenes>
 </document>

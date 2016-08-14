@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         desc.backgroundColor = UIColor.white()
         label.textAlignment = .center
+        answer.text = nil
+        answer.placeholder = self.okPlaceholder
                 // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -80,15 +82,6 @@ class ViewController: UIViewController {
         item.key = "cc"
         item.score = 1
         
-        let session = URLSession.shared
-        let myURL = URL(string: "http://192.168.1.108:8080/GradleProject/getNextItem")!
-        let task = session.dataTask(with: myURL) { (data, resonse, error) in
-            print(data)
-            print("111")
-            item.desc = String(data)
-            
-        }
-        task.resume()
         
         
         
@@ -106,8 +99,8 @@ class ViewController: UIViewController {
             item.desc = String(str)
             
             let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-            let desc = json.object(forKey: "desc")
-            let key = json.object(forKey: "key")
+            let desc = json.object(forKey: "title")
+            let key = json.object(forKey: "value")
             let score = json.object(forKey: "score")
             item.desc = String(desc!)
             item.key = String(key!)
