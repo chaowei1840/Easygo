@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     let errPlaceholder = "答案错误，再来一次"
     let okPlaceholder = "输入答案"
     let againPlaceholder = "再来一次"
-
+    let coreSession:URLSession! = URLSession.shared
+    let url = URL(string: "http://192.168.1.108:8080/GradleProject/getNextItem")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         desc.backgroundColor = UIColor.white()
@@ -86,32 +88,32 @@ class ViewController: UIViewController {
         
         
         
-        
-        let url = URL(string: "http://192.168.1.108:8080/GradleProject/getNextItem")
-        let urlRequest = URLRequest(url: url!)
-        var response:URLResponse?
-        
-        do
-        {
-            let data = try NSURLConnection.sendSynchronousRequest(urlRequest, returning: &response)
-            let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-            print(str)
-            item.desc = String(str)
+            let task = coreSession.dataTask(with: url!, completionHandler: { (data, response, error) in
+                self.coreSession.finishTasksAndInvalidate()
+                var json:AnyObject
+                do
+                {
+                    json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+                    let desc = json.object(forKey: "title")
+                    let key = json.object(forKey: "value")
+                    let score = json.object(forKey: "score")
+                    item.desc = String(desc!)
+                    item.key = String(key!)
+                    item.score = Int(score as! NSNumber)
+                }
+                catch let error as NSError
+                {
+                    print(error.code)
+                    print(error.description)
+                }
+
+                
+                
+            })
             
-            let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-            let desc = json.object(forKey: "title")
-            let key = json.object(forKey: "value")
-            let score = json.object(forKey: "score")
-            item.desc = String(desc!)
-            item.key = String(key!)
-            item.score = Int(score as! NSNumber)
+            task.resume()
             
-        }
-        catch let error as NSError
-        {
-            print(error.code)
-            print(error.description)
-        }
+        
         
         
         return item
