@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         item.score = 1
         
         
-        
+        let semaphore:DispatchSemaphore = DispatchSemaphore.init(value: 0)
         
         
             let task = coreSession.dataTask(with: url!, completionHandler: { (data, response, error) in
@@ -100,6 +100,7 @@ class ViewController: UIViewController {
                     item.desc = String(desc!)
                     item.key = String(key!)
                     item.score = Int(score as! NSNumber)
+                    semaphore.signal()
                 }
                 catch let error as NSError
                 {
@@ -110,11 +111,12 @@ class ViewController: UIViewController {
                 
                 
             })
-            
+                    
             task.resume()
+        
             
         
-        
+        semaphore.wait()
         
         return item
     }
