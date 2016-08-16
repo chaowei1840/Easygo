@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,6 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="马到成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jia-z0-OLG">
+                                <color key="backgroundColor" red="1" green="0.32057956584425651" blue="0.30016059618913649" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,21 +40,32 @@
                                     <action selector="submit:" destination="BYZ-38-t0r" eventType="touchDown" id="2K6-ud-zUc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="cover" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1B-NE-ojg">
+                                <color key="backgroundColor" red="0.19450836110960923" green="1" blue="0.96942842686410524" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SPo-Ia-b0p" firstAttribute="top" secondItem="Jia-z0-OLG" secondAttribute="bottom" constant="51" id="02N-gJ-qR5"/>
                             <constraint firstItem="pnB-bK-Lpu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0QY-ct-R7W"/>
+                            <constraint firstItem="J1B-NE-ojg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4GI-Lf-mbW"/>
+                            <constraint firstItem="J1B-NE-ojg" firstAttribute="top" secondItem="Jia-z0-OLG" secondAttribute="top" id="5m8-Yq-XXh" userLabel="Cover.top = Label.top"/>
                             <constraint firstItem="Jia-z0-OLG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="892-Pc-WoW"/>
                             <constraint firstItem="SPo-Ia-b0p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DMf-qe-ipx"/>
                             <constraint firstItem="XIX-9u-1n0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZOy-oX-GYb"/>
                             <constraint firstItem="Jia-z0-OLG" firstAttribute="top" secondItem="XIX-9u-1n0" secondAttribute="bottom" constant="44" id="cLJ-OT-QDr"/>
                             <constraint firstItem="pnB-bK-Lpu" firstAttribute="top" secondItem="SPo-Ia-b0p" secondAttribute="bottom" constant="59" id="dFq-Qs-Rud"/>
                             <constraint firstItem="XIX-9u-1n0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="iO1-4w-rwf"/>
+                            <constraint firstItem="Jia-z0-OLG" firstAttribute="height" secondItem="J1B-NE-ojg" secondAttribute="height" multiplier="2" id="oeV-hs-2pe"/>
+                            <constraint firstItem="J1B-NE-ojg" firstAttribute="width" secondItem="Jia-z0-OLG" secondAttribute="width" id="wpd-da-zKy"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answer" destination="SPo-Ia-b0p" id="U9l-n0-5Qv"/>
+                        <outlet property="cover" destination="J1B-NE-ojg" id="cg4-jH-Ue4"/>
                         <outlet property="desc" destination="XIX-9u-1n0" id="mHv-EK-Aaj"/>
                         <outlet property="label" destination="Jia-z0-OLG" id="LzQ-pu-hPq"/>
                         <outlet property="submit" destination="pnB-bK-Lpu" id="zuL-pd-0Zb"/>
